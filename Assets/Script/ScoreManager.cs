@@ -6,7 +6,7 @@ public class ScoreManager : MonoBehaviour
 
 {
 	// kita buat variabel score untuk menyimpan skor
-  public float score;
+  public static float score;
 	
   private void Start()
   {
@@ -19,8 +19,6 @@ public class ScoreManager : MonoBehaviour
 		// tambah skor berdasarkan parameter
     score += addition;
   }
-}
-
   public void ResetScore()
   {
 		// kembalikan skor ke 0 untuk situasi tertentu
@@ -32,7 +30,7 @@ public class ScoreManager : MonoBehaviour
 	
   private void OnCollisionEnter(Collision collision)
   {
-    if (collision.collider == bola)
+    if (collision.collider.name == "bola")
 		{
 			
 
@@ -53,4 +51,5 @@ public class ScoreManager : MonoBehaviour
     //tambah score saat menyalakan atau mematikan switch
     scoreManager.AddScore(score);
   }
+}
 }
